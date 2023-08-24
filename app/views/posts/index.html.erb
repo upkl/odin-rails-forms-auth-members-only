@@ -2,7 +2,10 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <li><%= link_to post.title, post %></li>
+    <li>
+      <%= link_to post.title, post %>
+      <%= "(by #{post.user.username})" if user_signed_in? %>
+    </li>
   <% end %>
 </ul>
 

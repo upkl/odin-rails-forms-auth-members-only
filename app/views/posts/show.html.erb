@@ -1,0 +1,7 @@
+<h2><%= @post.title %></h2>
+
+<%= "(by #{@post.user.username})" if user_signed_in? %>
+
+<p><%= @post.body %></p>
+
+<%= render 'devise_links' if !user_signed_in? %>

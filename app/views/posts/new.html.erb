@@ -1,0 +1,21 @@
+<h2>New Post</h2>
+
+<ul>
+  <%= form_with model:@post do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div>
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</ul>
+
+<%= render 'devise/shared/error_messages', locals = { resource: @post } %>
